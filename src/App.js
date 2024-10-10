@@ -29,7 +29,16 @@ function App() {
   ];
   return (
     <div>
-      <ExpenseItem
+      {expenses.map((expense) => {
+        return (
+          <ExpenseItem
+            title={expense.title}
+            price={expense.price}
+            date={expense.date}
+          />
+        );
+      })}
+      {/* <ExpenseItem
         title={expenses[0].title}
         price={expenses[0].price}
         date={expenses[0].date}
@@ -48,7 +57,7 @@ function App() {
         title={expenses[3].title}
         price={expenses[3].price}
         date={expenses[3].date}
-      />
+      /> */}
     </div>
   );
 }
