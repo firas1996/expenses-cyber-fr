@@ -1,9 +1,10 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
+import "./ExpensesContainer.css";
 
 const ExpensesContainer = (props) => {
   return (
-    <div>
+    <div className="ex-Container">
       {props.expenses.map((expense) => {
         return (
           <ExpenseItem
