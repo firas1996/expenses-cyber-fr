@@ -1,5 +1,6 @@
 import ExpenseItem from "./components/ExpenseItem";
 import ExpensesContainer from "./components/ExpensesContainer";
+import NewExpenseForm from "./components/NewExpenseForm";
 
 function App() {
   const expenses = [
@@ -30,6 +31,7 @@ function App() {
   ];
   return (
     <div>
+      <NewExpenseForm />
       <ExpensesContainer expenses={expenses} />
       {/* <ExpenseItem
         title={expenses[0].title}
