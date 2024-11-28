@@ -29,9 +29,12 @@ function App() {
       price: 3333,
     },
   ];
+  const getData = (data) => {
+    console.log(data);
+  };
   return (
     <div>
-      <NewExpenseForm />
+      <NewExpenseForm getData={getData} />
       <ExpensesContainer expenses={expenses} />
       {/* <ExpenseItem
         title={expenses[0].title}

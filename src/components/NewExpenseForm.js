@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NewExpenseForm.css";
 
-const NewExpenseForm = () => {
+const NewExpenseForm = (props) => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [date, setDate] = useState("");
@@ -14,7 +14,10 @@ const NewExpenseForm = () => {
   const handelDateChange = (event) => {
     setDate(event.target.value);
   };
-  const handleSubmit = (event) => {};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.getData({ title, price, date });
+  };
   return (
     <div className="new-expense">
       <form onSubmit={handleSubmit}>
