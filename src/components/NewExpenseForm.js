@@ -16,7 +16,15 @@ const NewExpenseForm = (props) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.getData({ title, price, date });
+    props.getData({
+      id: Math.random().toString(),
+      title: title,
+      date: new Date(date),
+      price: +price,
+    });
+    setTitle("");
+    setPrice("");
+    setDate("");
   };
   return (
     <div className="new-expense">
@@ -28,6 +36,7 @@ const NewExpenseForm = (props) => {
               placeholder="Title"
               onChange={handelTitleChange}
               value={title}
+              required
             />
           </div>
           <div className="new-expense__control">
@@ -39,6 +48,7 @@ const NewExpenseForm = (props) => {
               step="0.01"
               onChange={handelPriceChange}
               value={price}
+              required
             />
           </div>
           <div className="new-expense__control">
@@ -49,6 +59,7 @@ const NewExpenseForm = (props) => {
               max="2025-12-31"
               onChange={handelDateChange}
               value={date}
+              required
             />
           </div>
         </div>
